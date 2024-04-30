@@ -1,7 +1,6 @@
 import '../static/css/style.css'
-import 'bootstrap/dist/css/bootstrap.css';
 import { useState } from 'react';
-import { e, evaluate } from 'mathjs';
+import { evaluate } from 'mathjs';
 
 function Calculator() {
     const [displayText, setDisplayText] = useState('');
