@@ -22,7 +22,7 @@ function Calculator() {
         { key: 14, value: '3', fun: handleDigitClick },
         { key: 15, value: '0', fun: handleDigitClick },
         { key: 16, value: '.', fun: () => { } },
-        { key: 17, value: 'C', fun: () => { } }
+        { key: 17, value: 'C', fun: () => setDisplayText('') }
     ];
 
     return (
