@@ -23,6 +23,7 @@
   padding: 25px;
   text-align: right;
   line-height: 50px;
+  height: 100px;
 }
 #root .calculator .keyboard {
   background-color: #aaaaaa;

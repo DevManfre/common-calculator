@@ -26,6 +26,7 @@ $display-color: white;
             padding: calc($display-font-size / 2);
             text-align: right;
             line-height: $display-font-size;
+            height: calc($display-font-size * 2);
         }
 
         .keyboard {
