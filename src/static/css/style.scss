@@ -42,6 +42,7 @@ $display-color: white;
                 text-align: center;
                 font-size: calc($display-font-size * 2 / 3);
                 background-color: $display-color;
+                transition: 0.3s;
             }
 
             .button:nth-child(n+1):nth-child(-n+4) {
@@ -49,7 +50,7 @@ $display-color: white;
             }
 
             .button:hover {
-                filter: brightness(95%)
+                filter: brightness(95%);
             }
 
             .button:active {

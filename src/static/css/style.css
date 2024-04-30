@@ -39,6 +39,7 @@
   text-align: center;
   font-size: 33.3333333333px;
   background-color: white;
+  transition: 0.3s;
 }
 #root .calculator .keyboard .button:nth-child(n+1):nth-child(-n+4) {
   background-color: #E7E7E7;
