@@ -20,9 +20,13 @@
 #root .calculator .display {
   color: white;
   font-size: 50px;
-  padding: 25px;
+  padding: 25px 25px 25px 0;
+  margin: 0 0 0 25px;
   text-align: right;
   line-height: 50px;
+  height: 100px;
+  overflow: hidden;
+  direction: rtl;
 }
 #root .calculator .keyboard {
   background-color: #aaaaaa;
@@ -38,6 +42,7 @@
   text-align: center;
   font-size: 33.3333333333px;
   background-color: white;
+  transition: 0.3s;
 }
 #root .calculator .keyboard .button:nth-child(n+1):nth-child(-n+4) {
   background-color: #E7E7E7;
