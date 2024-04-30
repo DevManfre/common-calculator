@@ -1,0 +1,26 @@
+$calculator-size: 500px;
+$display-font-size: 45px;
+
+#root {
+    height: 100vh;
+    width: 100vw;
+
+    .calculator {
+        width: $calculator-size;
+        height: $calculator-size;
+        background-color: #262626;
+        border-radius: 24px;
+        position: relative;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        overflow: hidden;
+
+        .display {
+            color: white;
+            font-size: $display-font-size;
+            padding: calc($display-font-size / 2);
+            text-align: right;
+        }
+    }
+}
