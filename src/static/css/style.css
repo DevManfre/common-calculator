@@ -1,0 +1,56 @@
+#root {
+  height: 100vh;
+  width: 100vw;
+  background-color: #96CFD8;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+#root .calculator {
+  width: 500px;
+  height: 504px;
+  background-color: #262626;
+  border-radius: 25px;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+#root .calculator .display {
+  color: white;
+  font-size: 50px;
+  padding: 25px;
+  text-align: right;
+  line-height: 50px;
+}
+#root .calculator .keyboard {
+  background-color: #aaaaaa;
+  height: 404px;
+  display: grid;
+  grid-template-columns: repeat(4, 125px);
+  -moz-column-gap: 1px;
+       column-gap: 1px;
+  row-gap: 1px;
+}
+#root .calculator .keyboard .button {
+  line-height: 80px;
+  text-align: center;
+  font-size: 33.3333333333px;
+  background-color: white;
+}
+#root .calculator .keyboard .button:nth-child(n+1):nth-child(-n+4) {
+  background-color: #E7E7E7;
+}
+#root .calculator .keyboard .button:hover {
+  filter: brightness(95%);
+}
+#root .calculator .keyboard .button:active {
+  filter: brightness(85%);
+}
+#root .calculator .keyboard .button:nth-child(8) {
+  background-color: #F88967;
+  grid-column: 4;
+  grid-row: 2/6;
+  line-height: 320px;
+}/*# sourceMappingURL=style.css.map */
