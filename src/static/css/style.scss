@@ -1,15 +1,19 @@
 $calculator-size: 500px;
-$display-font-size: 45px;
+$display-font-size: calc($calculator-size / 10);
+$column-number: 4;
+$display-color: white;
 
 #root {
     height: 100vh;
     width: 100vw;
+    background-color: #96CFD8;
+    user-select: none;
 
     .calculator {
         width: $calculator-size;
-        height: $calculator-size;
+        height: calc($calculator-size + 1px * $column-number);
         background-color: #262626;
-        border-radius: 24px;
+        border-radius: calc($calculator-size / 20);
         position: relative;
         left: 50%;
         top: 50%;
@@ -17,10 +21,46 @@ $display-font-size: 45px;
         overflow: hidden;
 
         .display {
-            color: white;
+            color: $display-color;
             font-size: $display-font-size;
             padding: calc($display-font-size / 2);
             text-align: right;
+            line-height: $display-font-size;
+        }
+
+        .keyboard {
+            background-color: #aaaaaa;
+            height: calc($calculator-size - $display-font-size * 2 + 1px * $column-number);
+            display: grid;
+            grid-template-columns: repeat($column-number, calc($calculator-size / $column-number));
+            column-gap: 1px;
+            row-gap: 1px;
+
+            .button {
+                line-height: calc(($calculator-size - $display-font-size * 2) / 5);
+                text-align: center;
+                font-size: calc($display-font-size * 2 / 3);
+                background-color: $display-color;
+            }
+
+            .button:nth-child(n+1):nth-child(-n+4) {
+                background-color: #E7E7E7;
+            }
+
+            .button:hover {
+                filter: brightness(95%)
+            }
+
+            .button:active {
+                filter: brightness(85%);
+            }
+
+            .button:nth-child(8) {
+                background-color: #F88967;
+                grid-column: $column-number;
+                grid-row: 2 / 6;
+                line-height: calc(($calculator-size - $display-font-size * 2) / 5 * 4);
+            }
         }
     }
 }
