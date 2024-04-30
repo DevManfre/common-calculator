@@ -1,6 +1,7 @@
 import '../static/css/style.css'
 import { useState } from 'react';
 import { evaluate } from 'mathjs';
+import 'bootstrap/dist/css/bootstrap.css';
 
 function Calculator() {
     const [displayText, setDisplayText] = useState('');
@@ -9,10 +10,10 @@ function Calculator() {
         const lastChar = displayText[displayText.length - 1];
         const newChar = event.target.getAttribute('value');
 
-        if (newChar != lastChar)
+        if (newChar !== lastChar)
             if (['*', '/', '+', '-'].includes(lastChar))
                 setDisplayText(displayText.slice(0, -1) + newChar);
-            else if (displayText != '')
+            else if (displayText !== '')
                 handleDigitClick(event);
     }
     const buttons = [
