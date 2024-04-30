@@ -20,10 +20,13 @@
 #root .calculator .display {
   color: white;
   font-size: 50px;
-  padding: 25px;
+  padding: 25px 25px 25px 0;
+  margin: 0 0 0 25px;
   text-align: right;
   line-height: 50px;
   height: 100px;
+  overflow: hidden;
+  direction: rtl;
 }
 #root .calculator .keyboard {
   background-color: #aaaaaa;

@@ -23,10 +23,13 @@ $display-color: white;
         .display {
             color: $display-color;
             font-size: $display-font-size;
-            padding: calc($display-font-size / 2);
+            padding: calc($display-font-size / 2) calc($display-font-size / 2) calc($display-font-size / 2) 0;
+            margin: 0 0 0 calc($display-font-size / 2);
             text-align: right;
             line-height: $display-font-size;
             height: calc($display-font-size * 2);
+            overflow: hidden;
+            direction: rtl;
         }
 
         .keyboard {
