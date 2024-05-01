@@ -1,0 +1,90 @@
+$calculator-size: 500px;
+$display-font-size: calc($calculator-size / 10);
+$column-number: 4;
+$display-color: white;
+$calculator-bg: #262626;
+
+#root {
+    height: 100vh;
+    width: 100vw;
+    background-color: #96CFD8;
+    user-select: none;
+
+    .calculator {
+        width: $calculator-size;
+        height: calc($calculator-size + 1px * $column-number);
+        background-color: $calculator-bg;
+        border-radius: calc($calculator-size / 20);
+        position: relative;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        overflow: hidden;
+
+        .display {
+            color: $display-color;
+            font-size: $display-font-size;
+            padding: calc($display-font-size / 2) 0 calc($display-font-size / 2) 0;
+            margin: 0 calc($display-font-size / 2) 0 calc($display-font-size / 2);
+            text-align: right;
+            line-height: $display-font-size;
+            height: calc($display-font-size * 2);
+            overflow: hidden;
+        }
+
+        .keyboard {
+            background-color: #aaaaaa;
+            height: calc($calculator-size - $display-font-size * 2 + 1px * $column-number);
+            display: grid;
+            grid-template-columns: repeat($column-number, calc($calculator-size / $column-number));
+            column-gap: 1px;
+            row-gap: 1px;
+
+            .button {
+                line-height: calc(($calculator-size - $display-font-size * 2) / 5);
+                text-align: center;
+                font-size: calc($display-font-size * 2 / 3);
+                background-color: $display-color;
+                transition: 0.3s;
+            }
+
+            .button:nth-child(n+1):nth-child(-n+4) {
+                background-color: #E7E7E7;
+            }
+
+            .button:hover {
+                filter: brightness(95%);
+            }
+
+            .button:active {
+                filter: brightness(85%);
+            }
+
+            .button:nth-child(8) {
+                background-color: #F88967;
+                grid-column: $column-number;
+                grid-row: 2 / 6;
+                line-height: calc(($calculator-size - $display-font-size * 2) / 5 * 4);
+            }
+        }
+    }
+
+    .reference {
+        position: absolute;
+        right: 1%;
+        bottom: 0;
+        color: $calculator-bg;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 20px;
+        font-weight: 600;
+
+        a {
+            text-decoration: none;
+            color: $calculator-bg;
+        }
+
+        a:hover{
+            color: #F88967;
+        }
+    }
+}
