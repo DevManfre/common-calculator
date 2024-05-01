@@ -1,7 +1,7 @@
 import '../static/css/style.css'
-import 'bootstrap/dist/css/bootstrap.css';
 import { useState } from 'react';
-import { e, evaluate } from 'mathjs';
+import { evaluate } from 'mathjs';
+import 'bootstrap/dist/css/bootstrap.css';
 
 function Calculator() {
     const [displayText, setDisplayText] = useState('');
@@ -10,10 +10,10 @@ function Calculator() {
         const lastChar = displayText[displayText.length - 1];
         const newChar = event.target.getAttribute('value');
 
-        if (newChar != lastChar)
+        if (newChar !== lastChar)
             if (['*', '/', '+', '-'].includes(lastChar))
                 setDisplayText(displayText.slice(0, -1) + newChar);
-            else if (displayText != '')
+            else if (displayText !== '')
                 handleDigitClick(event);
     }
     const buttons = [
@@ -30,7 +30,7 @@ function Calculator() {
                     setDisplayText(`${evaluate(displayText)}`);
                 }
                 catch (error) {
-                    switch (error){
+                    switch (error) {
                         case SyntaxError:
                             break;
                         default:
@@ -52,17 +52,20 @@ function Calculator() {
     let keyCount = 0;
 
     return (
-        <div className='calculator'>
-            <div className='display'>{displayText}</div>
-            <div className="keyboard">
-                {buttons.map(item => {
-                    keyCount += 1;
-                    return (
-                        <div key={keyCount} className="button" onClick={item.fun} value={item.value}>{item.value}</div>
-                    );
-                })}
+        <>
+            <div className='calculator'>
+                <div className='display'>{displayText}</div>
+                <div className="keyboard">
+                    {buttons.map(item => {
+                        keyCount += 1;
+                        return (
+                            <div key={keyCount} className="button" onClick={item.fun} value={item.value}>{item.value}</div>
+                        );
+                    })}
+                </div>
             </div>
-        </div>
+            <p className='reference'>Coded by <a href='https://github.com/DevManfre'>DevManfre</a></p>
+        </>
     );
 }
 

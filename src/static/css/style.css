@@ -20,13 +20,12 @@
 #root .calculator .display {
   color: white;
   font-size: 50px;
-  padding: 25px 25px 25px 0;
-  margin: 0 0 0 25px;
+  padding: 25px 0 25px 0;
+  margin: 0 25px 0 25px;
   text-align: right;
   line-height: 50px;
   height: 100px;
   overflow: hidden;
-  direction: rtl;
 }
 #root .calculator .keyboard {
   background-color: #aaaaaa;
@@ -58,4 +57,20 @@
   grid-column: 4;
   grid-row: 2/6;
   line-height: 320px;
+}
+#root .reference {
+  position: absolute;
+  right: 1%;
+  bottom: 0;
+  color: #262626;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
+  font-weight: 600;
+}
+#root .reference a {
+  text-decoration: none;
+  color: #262626;
+}
+#root .reference a:hover {
+  color: #F88967;
 }/*# sourceMappingURL=style.css.map */
